@@ -86,6 +86,8 @@ return [
     'repeatPassword'            => 'Repeat Password',
     'emailOrUsername'           => 'Email or username',
     'username'                  => 'Username',
+    'name'                      => 'Name',
+    'profilePicture'            => 'Profile Picture',
     'register'                  => 'Register',
     'signIn'                    => 'Sign In',
     'alreadyRegistered'         => 'Already registered?',
