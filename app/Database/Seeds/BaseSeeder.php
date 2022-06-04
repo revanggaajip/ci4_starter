@@ -9,5 +9,6 @@ class BaseSeeder extends Seeder
     public function run()
     {
         $this->call('AuthGroupSeeder');
+        $this->call('AuthPermissionSeeder');
     }
 }
