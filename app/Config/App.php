@@ -7,6 +7,7 @@ use CodeIgniter\Session\Handlers\FileHandler;
 
 class App extends BaseConfig
 {
+    public $name = 'App Example';
     /**
      * --------------------------------------------------------------------------
      * Base Site URL

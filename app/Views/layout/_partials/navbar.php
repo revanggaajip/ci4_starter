@@ -21,12 +21,12 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        <img src="<?= base_url() ?>/img/pictures/default_user.svg" alt
+                                        <img src="<?= base_url() ?>/img/pictures/<?= user()->profile_picture; ?>" alt
                                             class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">John Doe</span>
+                                    <span class="fw-semibold d-block"><?= user()->name; ?></span>
                                     <small class="text-muted">Admin</small>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="auth-login-basic.html">
+                        <a class="dropdown-item" href="<?= route_to('logout'); ?>">
                             <i class="bx bx-power-off me-2"></i>
                             <span class="align-middle">Log Out</span>
                         </a>
