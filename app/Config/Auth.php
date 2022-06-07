@@ -63,6 +63,7 @@ class Auth extends \Myth\Auth\Config\Auth
 	public $validFields = [
 		'email',
 		'username',
+		'name'
 	];
 
 	/**
@@ -134,7 +135,7 @@ class Auth extends \Myth\Auth\Config\Auth
 	 *
 	 * @var bool
 	 */
-	public $allowRegistration = true;
+	public $allowRegistration = false;
 
 	/**
 	 * --------------------------------------------------------------------

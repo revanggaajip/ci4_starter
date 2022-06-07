@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Under Maintenance </title>
+    <title>Under Maintenance - <?= config('App')->name; ?></title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?= base_url() ?>/img/favicon/favicon.ico" />

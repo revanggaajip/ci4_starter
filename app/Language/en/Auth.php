@@ -80,7 +80,7 @@ return [
     'loginTitle'                => 'Login',
     'loginAction'               => 'Login',
     'rememberMe'                => 'Remember me',
-    'needAnAccount'             => 'Need an account?',
+    'needAnAccount'             => 'Create an account',
     'forgotYourPassword'        => 'Forgot your password?',
     'password'                  => 'Password',
     'repeatPassword'            => 'Repeat Password',
@@ -98,4 +98,10 @@ return [
     'newPassword'               => 'New Password',
     'newPasswordRepeat'         => 'Repeat New Password',
     'resetPassword'             => 'Reset Password',
+
+        // other
+    'name'                      => 'Name',
+    'profilePicture'            => 'Profile picture',
+    'loginInstruction'          => 'Log in to your account',
+    'newMember'                 => 'New on our platform?'
 ];

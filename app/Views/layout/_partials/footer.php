@@ -5,8 +5,9 @@
             <script>
             document.write(new Date().getFullYear());
             </script>
-            , made with ❤️ by
-            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+            <?= config('App')->name; ?> by
+            <a href="https://github.com/revanggaajip" target="_blank" class="footer-link fw-bolder">Revangga Aji
+                Pratama</a>
         </div>
     </div>
 </footer>

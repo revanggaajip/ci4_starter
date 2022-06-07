@@ -14,7 +14,9 @@ class UserSeeder extends Seeder
             'email'         => 'admin@gmail.com',
             'username'      => 'admin',
             'password_hash' => Password::hash('admin'),
-            'active'        => 1
+            'active'        => 1,
+            'created_at'    => date('Y-m-d H:i:s'),
+            'updated_at'    => date('Y-m-d H:i:s')
         ]);
     }
 }

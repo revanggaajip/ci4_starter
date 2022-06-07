@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title><?= $this->renderSection('title'); ?></title>
+    <title><?= $this->renderSection('title') ?? 'Dashboard' ?> - <?= config('App')->name; ?></title>
 
     <meta name="description" content="" />
 

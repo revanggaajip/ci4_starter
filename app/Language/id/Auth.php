@@ -5,16 +5,16 @@ return [
     'invalidModel'              => 'Model {0} harus dimuat sebelum digunakan.',
     'userNotFound'              => 'Tidak dapat menemukan pengguna dengan ID = {0, number}.',
     'noUserEntity'              => 'Entitas Pengguna harus disediakan untuk validasi kata sandi.',
-    'tooManyCredentials'        => 'Anda hanya dapat memvalidasi terhadap 1 kredensial selain kata sandi.',
-    'invalidFields'             => 'Bidang "{0}" tidak dapat digunakan untuk memvalidasi kredensial.',
+    'tooManyCredentials'        => 'Anda hanya dapat memvalidasi terhadap 1 identitas selain kata sandi.',
+    'invalidFields'             => 'Bidang "{0}" tidak dapat digunakan untuk memvalidasi identitas.',
     'unsetPasswordLength'       => 'Anda harus menyetel setelan `minimumPasswordLength` di file konfigurasi Auth.',
     'unknownError'              => 'Maaf, kami mengalami masalah saat mengirim email kepada Anda. Silakan coba lagi nanti.',
     'notLoggedIn'               => 'Anda harus masuk untuk mengakses halaman itu.',
-    'notEnoughPrivilege'        => 'Anda tidak memiliki izin yang memadai untuk mengakses halaman itu.',
+    'notEnoughPrivilege'        => 'Anda tidak memiliki izin yang memadai untuk mengakses halaman tersebut.',
 
     // Registration
     'registerDisabled'          => 'Maaf, akun pengguna baru tidak diperbolehkan untuk saat ini.',
-    'registerSuccess'           => 'Selamat bergabung! Harap masuk dengan kredensial baru Anda.',
+    'registerSuccess'           => 'Selamat bergabung! Harap masuk dengan identitas baru Anda.',
     'registerCLI'               => 'Pengguna baru dibuat: {0}, #{1}',
 
     // Activation
@@ -26,9 +26,9 @@ return [
     'errorSendingActivation'    => 'Gagal mengirim pesan aktivasi ke: {0}',
 
     // Login
-    'badAttempt'                => 'Tidak dapat memasukkan Anda. Harap periksa kredensial Anda.',
+    'badAttempt'                => 'Tidak dapat login. Harap periksa identitas Anda.',
     'loginSuccess'              => 'Selamat datang kembali!',
-    'invalidPassword'           => 'Tidak dapat memasukkan Anda. Harap periksa kata sandi Anda.',
+    'invalidPassword'           => 'Tidak dapat login. Harap periksa kata sandi Anda.',
 
     // Forgotten Passwords
     'forgotDisabled'            => 'Opsi pengaturan ulang kata sandi telah dinonaktifkan.',
@@ -74,16 +74,16 @@ return [
     'enterEmailForInstructions' => 'Tidak masalah! Masukkan email Anda di bawah ini dan kami akan mengirimkan instruksi untuk mengatur ulang kata sandi Anda.',
     'email'                     => 'Email',
     'emailAddress'              => 'Alamat Email',
-    'sendInstructions'          => 'Kirim Instruksi',
-    'loginTitle'                => 'Gabung',
-    'loginAction'               => 'Gabung',
+    'sendInstructions'          => 'Kirim',
+    'loginTitle'                => 'Masuk',
+    'loginAction'               => 'Masuk',
     'rememberMe'                => 'Ingat saya',
-    'needAnAccount'             => 'Butuh akun?',
+    'needAnAccount'             => 'Daftar disini',
     'forgotYourPassword'        => 'Lupa kata sandi Anda?',
     'password'                  => 'Kata sandi',
     'repeatPassword'            => 'Ulangi kata sandi',
-    'emailOrUsername'           => 'Email atau nama pengguna',
-    'username'                  => 'Nama pengguna',
+    'emailOrUsername'           => 'Email atau username',
+    'username'                  => 'Username',
     'register'                  => 'Daftar',
     'signIn'                    => 'Masuk',
     'alreadyRegistered'         => 'Sudah terdaftar?',
@@ -94,4 +94,11 @@ return [
     'newPassword'               => 'kata sandi baru',
     'newPasswordRepeat'         => 'Ulangi Kata Sandi Baru',
     'resetPassword'             => 'Atur Ulang Kata Sandi',
+
+    // other
+    'name'                      => 'Nama',
+    'profilePicture'            => 'Foto profil',
+    'loginInstruction'          => 'Masukkan Identitas Anda',
+    'newMember'                 => 'Pengguna baru?'
+
 ];
