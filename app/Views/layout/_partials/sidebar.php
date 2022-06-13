@@ -22,6 +22,13 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
+        <!-- Users -->
+        <li class="menu-item <?= $title == lang('App.users') ? 'active' : null ?>">
+            <a href="<?= route_to('users'); ?>" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Analytics"><?= lang('App.users'); ?></div>
+            </a>
+        </li>
 
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Pages</span>
