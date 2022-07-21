@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>/css/demo.css" />
 
     <!-- Vendors CSS -->
+    <link rel="stylesheet" href="<?= base_url() ?>/vendor/libs/sweetalert2/sweetalert2.min.css" />
     <link rel="stylesheet" href="<?= base_url() ?>/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
@@ -85,7 +86,7 @@
     <script src="<?= base_url() ?>/vendor/libs/popper/popper.js"></script>
     <script src="<?= base_url() ?>/vendor/js/bootstrap.js"></script>
     <script src="<?= base_url() ?>/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
+    <script src="<?= base_url() ?>/vendor/libs/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="<?= base_url() ?>/vendor/js/menu.js"></script>
     <!-- endbuild -->
 

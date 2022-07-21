@@ -20,6 +20,7 @@ class UserModel extends Model
     protected $useTimestamps = true;
 
     protected $validationRules = [
+        'name'          => 'required',
         'email'         => 'required|valid_email|is_unique[users.email,id,{id}]',
         'username'      => 'required|alpha_numeric_punct|min_length[3]|max_length[30]|is_unique[users.username,id,{id}]',
         'password_hash' => 'required',
@@ -123,9 +124,21 @@ class UserModel extends Model
 
     public function getUsers() {
         
-        return $this->join('auth_groups_users', 'auth_groups_users.user_id = users.id')
+        return $this->select('users.id, users.name, users.username, auth_groups.name as group_name, users.deleted_at')
+                    ->join('auth_groups_users', 'auth_groups_users.user_id = users.id')
                     ->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id')
-                    ->get()->getResult();
+                    ->orderBy('created_at', 'desc')
+                    ->where('users.deleted_at', null);
+                    // ->get()->getResult();
+    }
+
+    public function getUser($user) {
+        
+        return $this->select('users.id, users.name, users.email, users.username, auth_groups.id as group_id, auth_groups.name as group_name')
+                    ->join('auth_groups_users', 'auth_groups_users.user_id = users.id')
+                    ->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id')
+                    ->where('users.id', $user)
+                    ->first();
     }
 
 }

@@ -58,7 +58,10 @@ $routes->group('', ['namespace' => 'App\Controllers'], function ($routes) {
 // route since we don't have to scan directories.
 $routes->group('users', ['filter' => 'role:admin'], function ($routes) {
     $routes->get('/', 'UserController::index', ['as' => 'users']);
-
+    $routes->post('/', 'UserController::create', ['as' =>'users.create']);
+    $routes->get('edit/(:any)', 'UserController::edit/$1');
+    $routes->put('edit/(:any)', 'UserController::update/$1');
+    $routes->delete('delete/(:any)', 'UserController::delete/$1');
 });
 
 /*

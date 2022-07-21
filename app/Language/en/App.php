@@ -1,6 +1,35 @@
 <?php
 
 return [
-    'users'          => 'Users',
-    'index'          => 'List'
+    'users'                 => 'Users',
+    'usersIndex'            => 'List Users',
+    'usersCreate'           => 'Create User',
+    'usersEdit'             => 'Edit User',
+    'usersDelete'           => 'Delete User',
+    'insertName'            =>'Insert name',
+    'insertEmail'           =>'Insert email',
+    'selectGroup'           =>'Choose role',
+    'insertUsername'        =>'Insert username',
+    'insertPassword'        =>'Insert password',
+    'insertRepeatPassword'  =>'Insert password cofirm',
+    'createdData'           =>'Data has been created',
+    'updatedData'           =>'Data has been updated',
+    'deletedData'           =>'Data has been deleted',
+    'failedInsertData'      =>'Data failed inserted',
+    'failedUpdateData'      =>'Data failed updated',
+    'failedDeleteData'      =>'Data failed deleted',
+
+    'add'                   => 'Add',
+    'edit'                  => 'Edit',
+    'delete'                => 'Delete',
+    'name'                  =>'Name',
+    'email'                 =>'Email',
+    'group'                 =>'Role',
+    'username'              =>'Username',
+    'password'              => 'Password',
+    'repeatPassword'        => 'Password confirm',
+    'cancel'                => 'Cancel',
+    'save'                  => 'Save',
+    'success'               => 'Sukses',
+    'deleteConfirm'         => 'Do you really want to delete it?'
 ];
