@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\GroupModel;
+use App\Models\GroupUserModel;
 use App\Models\UserModel;
 use Myth\Auth\Password;
 use \Hermawan\DataTables\DataTable;
@@ -14,6 +15,7 @@ class UserController extends BaseController
     {
         $this->user = new UserModel();
         $this->group = new GroupModel();
+        $this->group_user = new GroupUserModel();
     }
 
     public function index()
@@ -90,8 +92,9 @@ class UserController extends BaseController
         if ($save) {
             $idUser = $this->user->insertId();
             $idGroup = $this->request->getVar('group');
-            $this->group->removeUserFromGroup($idUser, $idGroup);
-            $this->group->addUserToGroup($idUser, $idGroup);
+            // $this->group->removeUserFromGroup($id, $idGroup);
+            $this->group_user->update(['user_id' => $id], ['group_id' => $idGroup]);
+            // $this->group->addUserToGroup($id, $idGroup);
             return json_encode([
                 'status' => 'success',
                 'message' => lang('App.updatedData')

@@ -69,3 +69,77 @@
         </form>
     </div>
 </div>
+
+<script>
+function createData() {
+    $('#createData').submit((e) => {
+        e.preventDefault();
+        $.ajax({
+            url: $('#createData').attr('action'),
+            type: $('#createData').attr('method'),
+            data: $('#createData').serialize(),
+            dataType: "json",
+            success: (res) => {
+                if (res.status == 'success') {
+                    $('#createData')[0].reset();
+                    $('.btn-cancel').click();
+                    Swal.fire(
+                        '<?= lang('App.success') ?>',
+                        '<?= lang('App.createdData') ?>',
+                        'success'
+                    )
+                    $('#dataTables').DataTable().ajax.reload();
+                } else {
+                    // name validation
+                    if (res.data.name) {
+                        $('#createName').addClass('is-invalid');
+                        $('#validationCreateName').html(res.data.name);
+                    } else {
+                        $('#createName').removeClass('is-invalid');
+                        $('#validationCreateName').html('');
+                    }
+
+                    // email validation
+                    if (res.data.email) {
+                        $('#createEmail').addClass('is-invalid');
+                        $('#validationCreateEmail').html(res.data.email);
+                    } else {
+                        $('#createEmail').removeClass('is-invalid');
+                        $('#validationCreateEmail').html('');
+                    }
+
+                    // group validation
+                    if (res.data.group) {
+                        $('#createGroup').addClass('is-invalid');
+                        $('#validationCreateGroup').html(res.data.group);
+                    } else {
+                        $('#createGroup').removeClass('is-invalid');
+                        $('#validationCreateGroup').html('');
+                    }
+
+                    // username validation
+                    if (res.data.username) {
+                        $('#createUsername').addClass('is-invalid');
+                        $('#validationCreateUsername').html(res.data.username);
+                    } else {
+                        $('#createUsername').removeClass('is-invalid');
+                        $('#validationCreateUsername').html('');
+                    }
+
+                    // password validation
+                    if (res.data.password) {
+                        $('#createPassword').addClass('is-invalid');
+                        $('#validationCreatePassword').html(res.data.password);
+                    } else {
+                        $('#createPassword').removeClass('is-invalid');
+                        $('#validationCreatePassword').html('');
+                    }
+                }
+            },
+            error: (xhr, ajaxOptions, thrownError) => {
+                alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+            }
+        });
+    });
+}
+</script>

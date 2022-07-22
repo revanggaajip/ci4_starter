@@ -62,3 +62,90 @@
         </form>
     </div>
 </div>
+
+<script>
+function editData() {
+    $('#dataTables').on('click', '.btn-edit', function() {
+        let id = $(this).data('id');
+        $('#editData').attr('action', '<?= base_url() ?>/users/edit/' + id);
+        $('#editModal').modal('show');
+        $.ajax({
+            url: '<?= base_url() ?>/users/edit/' + id,
+            method: 'GET',
+            dataType: 'json',
+            success: (res) => {
+                $('#editId').val(res.data.id);
+                $('#editName').val(res.data.name);
+                $('#editEmail').val(res.data.email);
+                $(`#editGroup  option[value="${res.data.group_id}"]`).prop("selected", true);
+                $('#editUsername').val(res.data.username);
+                $('#editData').submit(function(e) {
+                    e.preventDefault();
+                    updateData();
+                });
+            }
+
+        })
+    });
+}
+
+function updateData() {
+    $.ajax({
+        url: $('#editData').attr('action'),
+        data: $('#editData').serialize(),
+        method: $('#editData').attr('method'),
+        dataType: 'json',
+        success: (res) => {
+            if (res.status == 'success') {
+                $('#editData')[0].reset();
+                $('.btn-cancel').click();
+                Swal.fire(
+                    '<?= lang('App.success') ?>',
+                    '<?= lang('App.updatedData') ?>',
+                    'success'
+                )
+                $('#dataTables').DataTable().ajax.reload();
+            } else {
+                // name validation
+                if (res.data.name) {
+                    $('#editName').addClass('is-invalid');
+                    $('#validationEditName').html(res.data.name);
+                } else {
+                    $('#editName').removeClass('is-invalid');
+                    $('#validationEditName').html('');
+                }
+
+                // email validation
+                if (res.data.email) {
+                    $('#editEmail').addClass('is-invalid');
+                    $('#validationEditEmail').html(res.data.email);
+                } else {
+                    $('#editEmail').removeClass('is-invalid');
+                    $('#validationEditEmail').html('');
+                }
+
+                // group validation
+                if (res.data.group) {
+                    $('#editGroup').addClass('is-invalid');
+                    $('#validationEditGroup').html(res.data.group);
+                } else {
+                    $('#editGroup').removeClass('is-invalid');
+                    $('#validationEditGroup').html('');
+                }
+
+                // username validation
+                if (res.data.username) {
+                    $('#editUsername').addClass('is-invalid');
+                    $('#validationEditUsername').html(res.data.username);
+                } else {
+                    $('#editUsername').removeClass('is-invalid');
+                    $('#validationEditUsername').html('');
+                }
+            }
+        },
+        error: (xhr, ajaxOptions, thrownError) => {
+            alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+        }
+    });
+}
+</script>

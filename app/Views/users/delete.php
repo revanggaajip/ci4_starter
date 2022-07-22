@@ -21,3 +21,35 @@
         </form>
     </div>
 </div>
+
+<script>
+function deleteData() {
+    $('#dataTables').on('click', '.btn-delete', function() {
+        let id = $(this).data('id');
+        $('#deleteData').attr('action', '<?= base_url() ?>/users/delete/' + id);
+        $('#deleteModal').modal('show');
+        $('#deleteData').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: (res) => {
+                    if (res.status == 'success') {
+                        $('#deleteData')[0].reset();
+                        $('.btn-cancel').click();
+                        Swal.fire(
+                            '<?= lang('App.success') ?>',
+                            '<?= lang('App.deletedData') ?>',
+                            'success'
+                        )
+                        $('#dataTables').DataTable().ajax.reload();
+                    }
+                }
+
+            });
+        });
+    });
+}
+</script>
